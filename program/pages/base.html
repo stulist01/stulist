@@ -1,0 +1,32 @@
+﻿<html>
+  <head>
+    <title>{% block title %}缺省标题{% end %}</title>
+    {% block js %}{% end %} 
+  </head>
+  <body  bgcolor="#ccffcc">
+
+    <center>
+<table border="1" width="80%" height="15">
+      <tr style="height=300px;">
+       
+         <td colspan=5>
+          <font face="新宋体" size="25">  
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;学生名单管理系统</td> </tr>
+        <tr >
+        <td style='width:10em'>&nbsp;&nbsp;&nbsp;菜单
+        <ul>
+          <li>&nbsp;&nbsp;<a href="/">返回主页</a></li>
+          <li>&nbsp;&nbsp;<a href="/coulist">学生名单</a></li>
+        </ul>
+        </td>
+        <td>
+        {% block content %}
+        {% end %}
+          </font>          
+        </td>
+        </font>
+      </tr>
+    </table>
+    </center>
+  </body>
+</html>

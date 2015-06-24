@@ -1,0 +1,35 @@
+﻿<style type="text/css">
+
+body {background-color: blue}
+{% extends "base.html" %}
+{% block title %} 
+ 学生名单 
+{% end %}
+
+{% block content %}
+	<a href="couedit/new">&nbsp;&nbsp;新增学生</a>
+	<hr>
+	<table>
+		<tr>
+			&nbsp;&nbsp;&nbsp;<td>&nbsp;&nbsp;&nbsp;学号</td>
+			<td>&nbsp;&nbsp;&nbsp;姓名</td>
+			<td>&nbsp;&nbsp;&nbsp;出生日期</td>
+                                                     <td>&nbsp;&nbsp;&nbsp;性别</td>
+                                                     <td>&nbsp;&nbsp;&nbsp;班级</td>
+		</tr>
+		{% for cou in courses %}
+		<tr>
+			<td>{{ cou['cou_no'] }}</td>
+			<td>&nbsp;&nbsp;&nbsp;{{ cou['name'] }}</td>
+                                                      <td>&nbsp;&nbsp;&nbsp;{{ cou['birth'] }}</td>
+                                                      <td>&nbsp;&nbsp;&nbsp;&nbsp;{{ cou['gender'] }}</td>
+                                                      <td>&nbsp;&nbsp;&nbsp;{{ cou['class0'] }}</td>
+			
+			<td>
+				<a href="couedit/{{cou['cou_sn']}}"> &nbsp;&nbsp;修改 </a> &nbsp;
+				<a href="coudel/{{cou['cou_sn']}}">&nbsp;&nbsp; 删除 </a>
+			</td>
+		</tr>
+		{% end %}
+	</table> 
+{% end %}
